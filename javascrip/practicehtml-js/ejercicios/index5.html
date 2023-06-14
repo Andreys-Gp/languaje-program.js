@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUINTO EJERCICIO</title>
+    <H1>QUINTO EJERCICIO</H1>
+</head>
+<SCRipt>
+/*
+5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH". 
+*/
+//RESPUESTA UNO
+const invertir = (cadena,repeticion) =>(!cadena)?
+console.warn("No pusiste una cadena")
+:
+(repeticion===undefined)?
+console.warn("No pusiste cuantas veces repetir")
+:
+console.info (cadena.repeat(repeticion))
+
+invertir("Hola Mundo" ,5)
+invertir("" ,5)
+invertir("Hola Mundo" ,)
+//RESPUESTA DOS
+const strReverse = (str = "") => {
+    if (!str) return console.warn('Olvidaste ingresar una cadena.')
+    if (typeof str !== 'string') return console.error('¡No ingresaste una cadena de caracteres!')
+
+    let splitStr = str.split("")
+    let reverseArray = splitStr.reverse()
+    let reverseStr = reverseArray.join("")
+
+    return reverseStr
+}
+
+console.log(strReverse("Hola Mundo Cruel"))
+
+
+
+//RESPUESTA TRES
+const invierteTexto = (cadena = "") => {
+  if (!cadena) return console.error("No ingresaste cadena de texto a procesar");
+  let textoInvertido = "";
+  for (let i = cadena.length - 1; i >= 0; i--) {
+    textoInvertido += cadena.charAt(i);
+  }
+  console.info(textoInvertido);
+};
+
+invierteTexto();
+invierteTexto("");
+invierteTexto("Hola Mundo aqui estoy");
+
+//RESPUESTA 4
+
+const invertircade=(cadena="")=>
+(!cadena)
+?console.warn("No ingresaste una cadena")
+:console.info(cadena.split("").reverse().join(""));
+invertircade ();
+invertircade("Hola Mundito")
+
+
+</SCRipt>
+<body>
+    
+</body>
+</html>

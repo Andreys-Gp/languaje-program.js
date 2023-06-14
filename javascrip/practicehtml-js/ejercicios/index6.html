@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEXTO EJERCICIO</title>
+    <H1>SEXTO EJERCICIO</H1>
+</head>
+<body>
+    <SCript>
+/*
+Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+*/
+//Primera Respuesta
+const contarTexto = (cadena = "", palabra = undefined) => {
+  if (!cadena) return console.warn("No has ingresado frase para procesar");
+  if (!palabra) return console.warn("No has ingresado palabra a procesar");
+
+  regex = new RegExp(palabra, "g");
+  if (regex.test(cadena)) {
+    console.info(
+      `La palabra "${palabra}" se repite "${
+        cadena.match(regex).length
+      }" veces dentro de la frase`
+    );
+  } else {
+    return console.warn("La palabra no existe dentro de la frase");
+  }
+};
+
+contarTexto();
+contarTexto("hola mundo adios mundo");
+contarTexto("", "mundo");
+contarTexto("hola mundo adios mundo", "");
+contarTexto("hola mundo adios mundo", "mundo");
+//segunda respuesta
+
+const textoEnCadena = (cadena="", texto="")=>{
+
+if (!cadena) return console.warn("no ingresaste un texto a procesar");
+if(!texto) return console.warn("no ingresaste la palabra");
+
+let i = 0, contador = 0;
+
+    while ( i !== -1 ) {
+        
+        i = cadena.indexOf(texto, i);
+
+        if ( i !== -1) {
+            i++;
+            contador++;
+        }
+        }
+        return console.info(` La palabra ${texto} se repite ${contador} veces `);
+
+}
+textoEnCadena();
+textoEnCadena("hola mundo en ell mundo");
+textoEnCadena("", "mundo");
+textoEnCadena("hola mundo este esel mundo de todos", "mundo");
+
+
+
+
+
+
+
+
+
+    </SCript>
+</body>
+</html>

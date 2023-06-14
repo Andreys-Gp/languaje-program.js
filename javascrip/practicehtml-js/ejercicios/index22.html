@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 22</title>
+ <H1>EJERCICIO 22 </H1>
+</head>
+<body>
+    <SCript>
+/*
+Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+*/
+
+const numAlto=(numero=undefined)=>{
+    
+    if (numero===undefined) return console.warn("No ingresaste un arreglo de numeros");
+
+    if(!(numero instanceof Array)) return console.error(`El valor ingresado "${numero}", no es un arreglo`);
+
+    if (numero.length===0) return console.error(`El arreglo ingresado  esta vacio`);
+
+    for(let num of numero){
+            if (typeof num!=="number") return console.error(`Dentro de los elementos ingresados "${num}", NO es un numero`);
+
+        }
+              
+        return console.info(`Arreglo original "${numero}"\n el valor maximo es ${Math.max.apply(null, numero)}\n el valor minimo es ${Math.min(...numero)}`);
+   
+
+
+        
+
+
+}
+numAlto();
+numAlto("");
+numAlto(["a",4,6]);
+numAlto([]);
+numAlto([-50,4,60]);
+numAlto(["a",4,6]);
+
+
+
+    </SCript>
+</body>
+</html>

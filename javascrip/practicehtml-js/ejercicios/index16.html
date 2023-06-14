@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 16</title>
+
+    <H1>EJERCICIO 16</H1>
+
+</head>
+<body>
+    <SCRIPt>
+   /*
+   Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+   */     
+   const descuentoProducto=(valor=undefined, descuento=0)=>{
+            if (valor===undefined) return console.warn("No ingresaste el valor del producto");
+            if (valor===0) return console.warn("El valor del producto no puede ser cero");
+            
+            if (typeof valor!=="number")  return console.error(`El valor ingresado "${valor}", no es un numero`);
+            if (typeof descuento!=="number")  return console.error(`El valor ingresado ${descuento}", no es un numero`);
+            
+            if (Math.sign(valor) === -1 || Math.sign(descuento) === -1) return console.error("No puede ingresar valores negativos");
+            
+            if(descuento>=valor) return console.error("El valor del descuento no puede ser igual o mayor que el precio del producto, te has equivocado con al descuento");
+
+            //if (valor<=descuento){
+                let des=(((valor*descuento)/100));
+
+            let resultado = (((valor*-descuento)/100)+valor);
+           return console.info(`El valor del producto es ${valor} el descuento es ${des} y el valor a pagar es "${resultado}"`);
+           // }else
+           // return console.error("El valor del descuento es mmayor al valor del producto");
+            /* if ((valor)<(descuento))
+            return console.info(`El valor del producto es "${valor}" y el descuento es "${descuento}" el valor del descuento es = "${resultado}`);*/
+                       
+           }
+           descuentoProducto();
+           descuentoProducto("e");
+           descuentoProducto(0);
+           descuentoProducto(100);
+           descuentoProducto(-100);
+           descuentoProducto("3",2);
+           descuentoProducto(-100,20);
+           descuentoProducto(1000,20);
+           descuentoProducto(1000,0);
+           descuentoProducto(20,30);
+    /*
+    let resultado = (((valor*-descuento)/100)+valor);
+
+    return console.info(resultado);
+*/
+            
+    </SCRIPt>
+</body>
+</html>

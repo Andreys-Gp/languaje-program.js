@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUARTO EJERCICIO</title>
+    <H1>CUARTO EJERCICIO</H1>
+</head>
+<body>
+    <SCRipt>
+/*
+Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+*/
+const repetirTexto=(cadena="",repetir = undefined)=>{
+    if (!cadena)return console.warn("no ingresaste un texto");
+
+    if (repetir===undefined) return console.warn("no ingresaste el numero de veces a repetir");
+    
+    if (repetir===0) return console.error("el nummero de veces debe ser mayor de cero");
+    
+    if(Math.sign(repetir)===-1) return console.error("el numero no puede ser negativo");
+
+for(let i=1; i<=repetir; i++)
+    console.info(`${cadena}, ${i}`);
+}
+repetirTexto("hola mundo",3);
+repetirTexto("hola mundo");
+repetirTexto("",3);
+repetirTexto("hola mundo",-3);
+repetirTexto("hola mundo",0);
+
+
+    </SCRipt>
+</body>
+</html>

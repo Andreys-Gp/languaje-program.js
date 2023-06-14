@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERICIO 14</title>
+<H1>EJERICIO 14</H1>
+</head>
+<body>
+    <SCript>
+    /*
+    ) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F
+    */
+     const converGrados=(valor=undefined, unidad=undefined)=>{
+        if (valor=== undefined) return console.warn("No ingresaste el valor  a convertir");
+        
+        if (typeof valor!=="number")  return console.error("Debes ingresar un numero");
+         
+        if (unidad=== undefined) return console.warn("No ingresaste el tipo de grados a convertir");
+        
+        if (typeof unidad!=="string")  return console.error(`El valor "${unidad}" , no es una cadena de texto`);
+        
+            if(unidad.length!==1||!/(C|F)/.test(unidad)) return console.warn("Valor de unidad no reconocido,");
+
+                if (unidad==="C"){
+                    return console.info(`${valor}°C = ${Math.round((valor*(9/5)) + 32)}°F`);
+                }else if (unidad==="F"){
+                    return console.info(`${valor}°F = ${Math.round(((valor-32)*(5/9)))}°C`);
+                }else{
+return console.warn("El tipo de grados a convertir no es valido")
+
+                }
+
+        }
+
+     converGrados();
+     converGrados("2");
+     converGrados(2);
+     converGrados(2, "true");
+     converGrados(2, "E");
+     converGrados(100, "C");
+     converGrados(0, "F");
+     converGrados(32, "F");
+     converGrados(100, "f");
+
+/*
+const  temperatura=(numb,modo)=>{     
+     if (typeof numb !== "number" || typeof modo !== "string") return "intoduce un numero y un modo";
+     if(modo=== undefined && numb === undefined  )return "intoduce un numero y un modo";
+     if (modo===undefined || numb === undefined)return "introduce F (fahrenheit) o C (grados Celsius)  y una temperatura"
+     modo.toLowerCase
+     if(modo=== "c"){
+        
+         
+         return (numb*9 / 5) + 32 
+         
+     }else if(modo === "f")  {
+        return (numb - 32) * 5 / 9 
+        
+     } else {
+       return  "solo acepta estos dos valores F (fahrenheit) o C (grados Celsius)"
+       
+     }
+
+ }
+ 
+ 
+   console.log(`la temperatura es
+  ${temperatura(0,"c" ) }`);
+
+     
+*/
+
+     
+     
+
+
+    </SCript>
+</body>
+</html>

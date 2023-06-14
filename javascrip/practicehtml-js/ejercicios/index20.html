@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 20</title>
+    <H1>EJERCICIO 20</H1>
+</head>
+<body>
+    <SCRipt>
+/*
+Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+*/
+const emailValido=(email="")=>{
+    if (email==="") return console.warn("No ingresaste la cadena de texto");
+    if (typeof email==="number")  return console.error(`El valor ingresado "${email}", no es una cadena de texto`);
+
+//^ les dice no puede haber nada antes
+let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(email);
+
+return(emailRegex)
+? console.info(`"${email}", SI es un correo valido`)
+: console.info(`"${email}", NO es un correo valido`)
+    
+
+}
+ emailValido();
+ emailValido(20);
+ emailValido("");
+ emailValido("pez%");
+ emailValido("pez");
+ emailValido("INSER HAWERD@gmail.com"); 
+ emailValido("inser.hawerd@gmail.12"); 
+ emailValido("INSER_HAWERD@gmail.com"); 
+ emailValido("inser_hawerd@gmail.com"); 
+ emailValido("inser.hawerd@gmail.com"); 
+
+    </SCRipt>
+</body>
+</html>

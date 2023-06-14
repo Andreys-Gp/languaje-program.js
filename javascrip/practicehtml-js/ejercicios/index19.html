@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 19</title>
+    <H1>EJERCICIO 19</H1>
+</head>
+<body>
+    <SCRipt>
+/*
+Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+*/
+const nombreValido=(nombre="")=>{
+    if (nombre==="") return console.warn("No ingresaste la cadena de texto");
+    if (typeof nombre==="number")  return console.error(`El valor ingresado "${nombre}", no es una cadena de texto`);
+
+//^ les dice no puede haber nada antes
+    let espReg=/^[A-Za-zÑñÁáÉéÏíÖóÜúÜü\s]+$/i.test(nombre);
+return(espReg)
+? console.info(`"${nombre}", SI es un nombre valido`)
+: console.info(`"${nombre}", NO es un nombre valido`)
+    
+
+}
+ nombreValido();
+ nombreValido(20);
+ nombreValido("");
+ nombreValido("pez%");
+ nombreValido("pez");
+ nombreValido("INSER HAWERD"); 
+ 
+
+
+
+
+
+
+
+    </SCRipt>
+</body>
+</html>

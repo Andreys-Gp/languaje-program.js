@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 26</title>
+
+    <H1>EJERCICIO 26</H1>
+
+</head>
+<body>
+    <SCript>
+/*
+Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+*/
+const numProme=(arr=undefined)=>{
+    
+    if (arr===undefined) return console.warn("No ingresaste un arreglo de numeros");
+
+    if(!(arr instanceof Array)) return console.error(`El valor ingresado "${arr}", no es un arreglo`);
+
+    if (arr.length===0) return console.error(`El arreglo ingresado  esta vacio`);
+
+    if (arr.length===1) return console.error(`El arreglo ingresado "${arr}",  debe tener minimo dos elementos`);
+
+    
+    for(let num of arr){
+            if (typeof num!=="number") return console.error(`Dentro de los elementos ingresados"${num}", NO es un numero`);
+
+        }
+        
+        
+        const promedio=(arr.reduce((acumulador, valor)=> acumulador+valor))/arr.length
+
+    console.info(`El arreglo ingresado "${arr}", su promedio es igual a : ${promedio}`);
+
+           // console.log(arrayStrings.sort())
+            
+}   
+
+numProme();
+numProme("");
+numProme(4,2,3,"a",4);
+numProme(4,2,3,2,4);
+numProme([]);
+numProme([1]);
+
+numProme([1,-2,3,4,5,6,7,8,9,0]);
+    </SCript>
+    
+</body>
+</html>

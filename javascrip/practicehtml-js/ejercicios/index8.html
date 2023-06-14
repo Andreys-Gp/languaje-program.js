@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCTAVO EJERCICIO</title>
+<H1>OCTAVO EJERCICIO</H1>
+
+</head>
+<body>
+    <SCRipt>
+/*
+Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá "1, 2, 3, 4 y 5.
+*/
+const elimineCaracter =(palabra="", patron="")=>{
+(!palabra)
+? console.warn("no ingresaste una palabra")
+ :(patron===(""))
+   ?console.warn("No ingresaste un patron de caracteres")
+   :console.info(palabra.replace(new RegExp(patron, "ig"), ""));
+}
+  elimineCaracter();
+  elimineCaracter("xyz2");
+  elimineCaracter("xyzd2","2");
+  elimineCaracter("como es que todo esta bien 23 45","[a-z]");
+
+    </SCRipt>
+
+
+</body>
+</html>

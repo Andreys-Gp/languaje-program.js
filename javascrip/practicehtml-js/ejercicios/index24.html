@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 24</title>
+
+    <H1>EJERCICIO 24</H1>
+
+</head>
+<body>
+    <SCript>
+/*
+Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+*/
+const ordenaPar=(arr=undefined)=>{
+    
+    if (arr===undefined) return console.warn("No ingresaste un arreglo de numeros");
+
+    if(!(arr instanceof Array)) return console.error(`El valor ingresado "${arr}", no es un arreglo`);
+
+    if (arr.length===0) return console.error(`El arreglo ingresado  esta vacio`);
+    
+    for(let num of arr){
+            if (typeof num!=="number") return console.error(`Dentro de los elementos ingresados"${num}", NO es un numero`);
+
+        }
+        
+        
+        return console.info(`Arreglo original "${arr}"\n , los numeros en orden son`,{
+            asc:arr.map(el=>el).sort(),
+            des:arr.map(el=>el).sort().reverse()});
+
+           // console.log(arrayStrings.sort())
+            
+}   
+
+ordenaPar();
+ordenaPar("");
+ordenaPar(4,2,3,"a",4);
+ordenaPar(4,2,3,2,4);
+ordenaPar([1,2,3,4,5,6,7,8,9,0]);
+    </SCript>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 17</title>
+    <H1>EJERCICIO 17</H1>
+</head>
+<body>
+    <SCRIpt>
+/*
+Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+*/
+const fechaValida = ( year = '', month = '', day = '') => {
+    
+    if ( !year || !month || !day ) return console.error("No has ingresado una fecha correcta");
+    if ( year === undefined || month === undefined || day === undefined) return console.warn(" No ingresaste una fecha");
+    if (typeof year !== "number" || typeof month !== "number" || typeof day !== "number") return console.error(`La fecha ingresada, no es correcta`);
+    if ( Math.sign(year) === -1 || Math.sign(month) === -1 || Math.sign(day) === -1 ) return console.error('No puede ingresar números negativos');
+
+    let fechaInicio = new Date(year,month,day);//feha inicial
+    let fechaFinal = Date.now(); //fecha de hoy
+    const transcurrido = fechaFinal - fechaInicio;
+
+    let milisecons = 1000*60*60*24*365;//los milesegundos que tiene un año
+
+    const valorFecha = transcurrido / milisecons;
+
+    const anio = Math.floor(valorFecha);
+    return (Math.sign(anio)===-1)
+        ? console.info(`Faltan "${Math.abs(anio)-(1)}" años para el ${year}`)
+        : (anio===-1)
+        ?console.info(`Estamos en el año actual ${year}`)
+        :console.info(`Han pasado "${anio+1}" años desde ${year}`)
+    return
+}
+
+fechaValida();
+fechaValida('','','');
+fechaValida('hola', 3, 6);
+fechaValida(3, 'hola', 6);
+fechaValida(3, 6, 'hola');
+fechaValida('12','5','4');
+fechaValida(2030,3,10);
+fechaValida(1984,4,23);
+fechaValida(2020,3,10);
+fechaValida(2019,3,10);
+
+
+
+    </SCRIpt>
+</body>
+</html>

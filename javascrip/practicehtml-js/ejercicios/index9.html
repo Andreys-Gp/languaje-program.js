@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVENO EJERCICIO</title>
+    <H1>NOVENO EJERCICIO</H1>
+
+
+</head>
+<body>
+  <SCRIpt>
+    /*
+Programa una función que obtenga un numero aleatorio entre 501 y 600.
+*/
+ const numaleatorio=(valor1=(""), valor2=(""))=>{
+    if(!valor1) return console.error("NO ingresaste el primer valor");
+    if (!valor2) return console.error("NO ingresaste el segundo valor");
+    
+    if (typeof valor1!=="number") return console.error(`el primer valor "${valor1}"ingresado no es un numero`);
+    if (typeof valor2!=="number") return console.error(`el segundo valor "${valor2}"ingresado no es un numerooo`);
+
+    if (valor1<501) return console.error("el valor ingresado debe ser mayor o igual a 501");
+    if (valor2>600) return console.error("El valor ingresado debe ser nmenor o igual a  600");
+
+    let aleatorio=Math.round(Math.random()*(valor2-valor1)+valor1);
+    return console.info(`El primer valor ingresado ${valor1} y el segundo valor ingresado es ${valor2} y el numero aleatorio entre los dos numeros es "${aleatorio}"`);
+
+ }
+
+numaleatorio("hola", 2002);
+numaleatorio(2002, "hola");
+numaleatorio("hola");
+numaleatorio(501,"");
+numaleatorio(501, 602);
+numaleatorio(501, 600);
+
+
+  </SCRIpt>  
+</body>
+</html>

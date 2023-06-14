@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEGUNDO EJERCICIO</title>
+    <H1>SEGUNDO EJERCICIO</H1>
+</head>
+<body>
+    <SCRipt>
+/*
+Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+*/
+const cortarCaracter=(cadena="", longitud=undefined)=>
+(!cadena)?
+console.warn("no ingresaste ninguna cadena")
+:(longitud===undefined)
+?console.warn("no ingresaste la longitud a cortar")
+:(cadena<=longitud)
+?console.warn("la longitud de la cadena es mas corta")
+:console.info(cadena.slice(0,longitud));
+cortarCaracter("Hola nundo",6);
+
+
+    </SCRipt>
+</body>
+</html>

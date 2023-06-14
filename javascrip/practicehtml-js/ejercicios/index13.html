@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 13</title>
+<H1>EJERCICIO 13</H1>
+
+</head>
+<body>
+    <SCript>
+/*
+Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+*/
+const numPar =(numero=undefined)=>{
+
+    if(numero===undefined) return console.warn("No ingresaste un numero");
+    
+    if (typeof numero!=="number")  return console.error("Debes ingresar un numero");
+            
+    return ((numero%2)===0) 
+     ?console.info(`El numero ingreado "${numero}" es par`)
+    :console.info(`El numero ingresado "${numero}" es impar`)
+
+}
+numPar();
+numPar("d");
+numPar(0);
+numPar(7);
+
+    </SCript>
+</body>
+</html>

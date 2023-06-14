@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEPTIMO EJERCICIO</title>
+    <H1>SEPTIMO EJERCICIO</H1>
+</head>
+<body>
+    <SCript>
+/*
+Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+:*/
+const funcioPalindro=(texto = "")=>{
+if(!texto) return console.warn("Olvidaste ingressar la frase");
+
+texto=texto.toLowerCase();
+
+let alReves= texto.split("").reverse().join("");
+
+return (texto === alReves)
+? console.info(`la palabra ingresada "${texto}",palabra al reves "${alReves}", si es palindrome`)
+ :console.info(`la palabra ingresada "${texto}",palabra al reves "${alReves}", No es palindrome`);
+
+}
+funcioPalindro();
+funcioPalindro("salas");
+funcioPalindro("SaLas");
+funcioPalindro("hola mundo");
+
+
+
+
+//SEGUNDA FORMA
+const palindromo = ( palabra = "") => {
+    if ( !palabra ) return console.warn('No ingresaste una palabra o frase');
+
+    palabra = palabra.toLowerCase();
+    let alReves = palabra.split("").reverse().join("");
+
+    return (alReves === palabra)
+        ? console.info(`Sí es palíndromo, Palabra original ${palabra}, Palabra al revés ${alReves}`)
+        : console.warn(`La palabra o frase no es palíndomo, Palabra original ${palabra}, Palabra al revés ${alReves}`);
+};
+
+//palindromo('Salas');
+//palindromo('Mario');
+
+//TERCERA RESPUESTA
+
+const Palindromo = (cadena = "") => {
+  if (!cadena) return console.warn("No ingresaste cadena de texto a procesar");
+  let textoInvertido = "";
+  const regex = / /gi;
+  cadena2 = cadena.replace(regex, "").toUpperCase();
+  cadena2 = cadena2.replace(/,/g, "");
+  cadena2 = cadena2.replace(/!/g, "");
+  cadena2 = cadena2.replace(/¡/g, "");
+  cadena2 = cadena2.replace(/:/g, "");
+  cadena2 = cadena2.replace(/\?/g, "");
+  cadena2 = cadena2.replace(/¿/g, "");
+
+  for (let i = cadena2.length - 1; i >= 0; i--) {
+    switch (cadena2.charAt(i)) {
+      case "Á":
+        cadena2 = cadena2.replace(/Á/g, "A");
+        break;
+      case "É":
+        cadena2 = cadena2.replace(/É/g, "E");
+        break;
+      case "Í":
+        cadena2 = cadena2.replace(/Í/g, "I");
+        break;
+      case "Ó":
+        cadena2 = cadena2.replace(/Ó/g, "O");
+        break;
+      case "Ú":
+        cadena2 = cadena2.replace(/Ú/g, "U");
+        break;
+      default:
+        break;
+    }
+    textoInvertido += cadena2.charAt(i);
+  }
+
+  for (let i = 0; i < cadena.length; i++) {
+    if (
+      cadena2.charAt(i).toUpperCase() != textoInvertido.charAt(i).toUpperCase()
+    ) {
+      return console.info(`La frase "${cadena}", no es un palindromo`);
+    }
+  }
+  return console.log(`La frase "${cadena}", si es un palindromo.`);
+};
+
+//Palindromo();
+//Palindromo("");
+//Palindromo("comer");
+//Palindromo( "salas");
+
+    </SCript>
+</body>
+</html>
